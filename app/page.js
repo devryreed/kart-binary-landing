@@ -18,7 +18,10 @@ import {
   Users,
   Star,
   Quote,
-  Check
+  Check,
+  ShieldCheck,
+  DollarSign,
+  MessageSquare
 } from 'lucide-react'
 
 export default function KartBinaryLandingPage() {
@@ -81,7 +84,9 @@ export default function KartBinaryLandingPage() {
       <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#080405]/80 border-b border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-red-400 flex items-center justify-center font-black text-slate-950 text-xl shadow-lg shadow-rose-500/20">K</div>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-red-400 flex items-center justify-center shadow-lg shadow-rose-500/20">
+              <TrendingUp className="w-5 h-5 text-white" strokeWidth={2.5} />
+            </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
                 Kart<span className="text-rose-400">Binary</span>
@@ -116,10 +121,10 @@ export default function KartBinaryLandingPage() {
 
       {/* Hero Section */}
       <section className="relative z-10 pt-16 pb-24 md:pt-24 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Text & CTAs */}
-          <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
+          <div className="md:col-span-7 space-y-8 text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold">
               <Zap className="w-3.5 h-3.5 animate-pulse" />
               <span>High-Velocity Formula 1 Binary Engine</span>
@@ -131,7 +136,7 @@ export default function KartBinaryLandingPage() {
               Uncompromising execution speed, instant tick resolution, and zero-latency mobile contract deployment.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
               <a
                 href={`${TRADING_APP_URL}?mode=signup`}
                 className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold text-slate-950 bg-gradient-to-r from-rose-400 via-red-400 to-red-400 hover:from-emerald-300 hover:to-cyan-300 transition-all shadow-xl shadow-rose-500/30 hover:shadow-rose-500/50 hover:-translate-y-0.5 flex items-center justify-center gap-3"
@@ -167,7 +172,7 @@ export default function KartBinaryLandingPage() {
           </div>
 
           {/* Right Column: Simulated Trading Terminal Widget with Smooth Curved Chart */}
-          <div className="lg:col-span-5">
+          <div className="md:col-span-5 w-full max-w-md mx-auto md:max-w-none">
             <div className="relative rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl p-6 backdrop-blur-xl space-y-5">
               <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
                 <div className="flex items-center gap-3">
@@ -288,47 +293,113 @@ export default function KartBinaryLandingPage() {
         </div>
       </section>
 
-      {/* Features Grid Section */}
+            {/* Stats Counter Bar */}
+      <section className="relative z-10 -mt-10 mb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-slate-900/60 border border-slate-800/80 rounded-2xl sm:rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <Users className="w-6 h-6 text-rose-400" />
+              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">1M+</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">Active traders</div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <BarChart3 className="w-6 h-6 text-rose-400" />
+              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">$2B+</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">Total traded</div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <Globe className="w-6 h-6 text-rose-400" />
+              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">150+</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">Countries</div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <Star className="w-6 h-6 text-rose-400 fill-rose-400" />
+              <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">4.9/5</div>
+              <div className="text-xs sm:text-sm text-slate-400 font-medium">User rating</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Platform Features Grid Section */}
       <section id="features" className="py-20 bg-slate-950/70 border-y border-slate-800/60 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-rose-400 bg-rose-500/10 px-3 py-1 rounded-full border border-rose-500/20">
-              Why Kart Binary
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-rose-400">
+              PLATFORM
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-white">Engineered For Speed & Financial Accuracy</h2>
-            <p className="text-slate-400 text-base">
-              Built on authoritative backend balance accounting, instant volatility tick streams, and multi-tenant isolation.
-            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+              Built for serious traders
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
-              <div className="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Card 1: Blazing Fast */}
+            <div className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white">Sub-Second Execution</h3>
+              <h3 className="text-xl font-bold text-white">Blazing Fast</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Contracts settle instantly against verified server ticks with zero slippage and millisecond pricing feedback.
+                Trades settle in under 1 second. Zero lag, instant results.
               </p>
             </div>
 
-            <div id="funding" className="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/80 hover:border-cyan-500/40 transition-all space-y-4 group">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                <Smartphone className="w-6 h-6" />
+            {/* Card 2: Fully Secured */}
+            <div className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white">M-Pesa & Local Payments</h3>
+              <h3 className="text-xl font-bold text-white">Fully Secured</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Seamless local mobile money deposits and instant payouts directly into your phone wallet with transparent processing.
+                256-bit SSL encryption and segregated client accounts.
               </p>
             </div>
 
-            <div className="bg-slate-900/60 p-8 rounded-2xl border border-slate-800/80 hover:border-indigo-500/40 transition-all space-y-4 group">
-              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-                <BarChart3 className="w-6 h-6" />
+            {/* Card 3: 100+ Markets */}
+            <div className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <Globe className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white">Digit & Strategy Scanners</h3>
+              <h3 className="text-xl font-bold text-white">100+ Markets</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
-                Utilize integrated digit frequency analyzers, odd/even heatmaps, and contract pattern alerts inside the terminal.
+                Predict forex, stocks, indices and commodities — all in one place.
+              </p>
+            </div>
+
+            {/* Card 4: No Hidden Fees */}
+            <div id="funding" className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <DollarSign className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold text-white">No Hidden Fees</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Zero fees on deposits and withdrawals. What you see is what you get.
+              </p>
+            </div>
+
+            {/* Card 5: Play Anywhere */}
+            <div className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <Smartphone className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold text-white">Play Anywhere</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Responsive web app works perfectly on any device, any screen.
+              </p>
+            </div>
+
+            {/* Card 6: 24/7 Support */}
+            <div className="bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800/80 hover:border-rose-500/40 transition-all space-y-4 group">
+              <div className="w-11 h-11 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition-transform">
+                <MessageSquare className="w-5 h-5" />
+              </div>
+              <h3 className="text-xl font-bold text-white">24/7 Support</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Real human support around the clock via live chat and email.
               </p>
             </div>
           </div>
@@ -342,7 +413,7 @@ export default function KartBinaryLandingPage() {
             <Star className="w-3.5 h-3.5 fill-amber-400" />
             <span>4.9 / 5.0 Average Rating</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white">Trusted By 12,000+ Active Traders</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-white">Trusted By 1M+ Active Traders</h2>
           <p className="text-slate-400 text-base">
             See how traders leverage OpticBinary's instant contract execution and M-Pesa local payouts.
           </p>
@@ -470,7 +541,7 @@ export default function KartBinaryLandingPage() {
               Ready to Start Trading Binary Options?
             </h2>
             <p className="text-slate-300 text-base sm:text-lg">
-              Join thousands of traders predicting volatility markets with sub-second execution.
+              Join over 1M+ traders predicting volatility markets with sub-second execution.
             </p>
           </div>
 
@@ -498,7 +569,9 @@ export default function KartBinaryLandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-800/60 pb-8">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-rose-500 flex items-center justify-center font-black text-slate-950 text-base">K</div>
+              <div className="w-8 h-8 rounded-lg bg-rose-500 flex items-center justify-center">
+                <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.5} />
+              </div>
               <span className="text-lg font-bold text-white">Kart Binary</span>
             </div>
 
@@ -508,9 +581,9 @@ export default function KartBinaryLandingPage() {
           </div>
 
           <div className="text-slate-500 leading-relaxed space-y-2">
-            <p>
+            {/* <p>
               <strong className="text-slate-400">Risk Warning:</strong> Trading binary options and synthetic contracts involves significant risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Please ensure you fully understand the risks involved before trading with real funds.
-            </p>
+            </p> */}
           </div>
         </div>
       </footer>
